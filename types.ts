@@ -1,12 +1,14 @@
 export interface Billboard{
     id:string
     label:string
+    labelColor:string
     imageUrl:string
 }
 
 export interface Category{
     id:string
     name:string
+    billboardId:string
     billboard:Billboard
 }
 

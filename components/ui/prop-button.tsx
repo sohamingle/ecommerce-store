@@ -1,3 +1,5 @@
+"use client"
+
 import { IconButton } from "@mui/material";
 import { MouseEventHandler } from "react";
 
