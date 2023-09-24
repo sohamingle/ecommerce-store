@@ -117,7 +117,7 @@ const Summary = () => {
             <Currency value={totalPrice} />
           </div>
         </div>
-        <Button disabled={loading} className="w-full" color="inherit" onClick={onCheckout}>
+        <Button disabled={loading || items.length===0} className="w-full" variant="contained" onClick={onCheckout}>
           Checkout
         </Button>
       </div>
