@@ -49,7 +49,7 @@ const CategoryPage:React.FC<Props> = async({params,searchParams}) => {
                             <Filter valueKey={'colorId'} name={'Colors'} data={colors}/>
                         </div>
                         <div className="mt-6 lg:col-span-4 lg:mt-0">
-                            <ProductList title={"Shoes"} items={products}/>
+                            <ProductList title={category.name} items={products}/>
                         </div>
                     </div>
                 </div>
