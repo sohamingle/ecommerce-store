@@ -23,10 +23,10 @@ const NavbarActions = () => {
 
     return (
         <div className="ml-auto flex items-center gap-x-4">
-            <Button color="inherit" onClick={()=>router.push('/cart')}>
+            <button onClick={()=>router.push('/cart')}>
                 <ShoppingCartOutlined className="text-black"/>
-                <span className="ml-1 text-black text-base">{cart.items.length}</span>
-            </Button>
+                <span className="ml-1 font-sans text-black text-base">{cart.items.length}</span>
+            </button>
         </div>
     );
 }
