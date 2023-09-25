@@ -40,10 +40,10 @@ const Info:React.FC<Props> = ({data}) => {
                 </div>
             </div>
             <div className="mt-10 flex items-center gap-x-3">
-                <Button color="inherit" className="bg-black text-white flex items-center gap-x-2" sx={{'&:hover':{backgroundColor:'black'}}} onClick={onAddToCart}>
+                <button color="inherit" className="bg-black text-white flex items-center gap-x-2 py-2 px-3 rounded-md transition active:scale-95" onClick={onAddToCart}>
                     <AddShoppingCart className="h-4 w-4"/>
                     Add To Cart
-                </Button>
+                </button>
             </div>
         </div>
     );

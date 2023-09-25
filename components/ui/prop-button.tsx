@@ -1,6 +1,5 @@
 "use client"
 
-import { IconButton } from "@mui/material";
 import { MouseEventHandler } from "react";
 
 interface Props{
@@ -12,15 +11,9 @@ const PropButton:React.FC<Props> = ({onClick,icon}) => {
     
 
     return (
-        <IconButton onClick={onClick} className="bg-white" sx={{
-            transition: 'scale 0.5s',
-            '&:hover': {
-                scale:'120%',
-                backgroundColor:"white"
-            }
-        }}>
+        <button onClick={onClick} className="bg-white rounded-full text-gray-600 p-[5px] transition hover:scale-110 active:scale-100">
             {icon}
-        </IconButton>
+        </button>
     );
 }
 

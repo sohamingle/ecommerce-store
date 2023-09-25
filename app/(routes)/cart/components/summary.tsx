@@ -15,23 +15,13 @@ import { toast } from "react-hot-toast";
 import { Button } from "@mui/material";
 import axios from "axios";
 import Script from "next/script";
+import { cn } from "@/lib/util";
 
 const Summary = () => {
 
   const [loading,setLoading] = useState(false)
-  const searchParams = useSearchParams();
   const items = useCart((state) => state.items)
   const removeAll = useCart((state) => state.removeAll)
-
-  useEffect(() => {
-    if (searchParams.get('success')) {
-      toast.success('Payment Successfull')
-      removeAll()
-    }
-    if (searchParams.get('canceled')) {
-      toast.error('Payment Failed')
-    }
-  }, [searchParams, removeAll])
 
   const totalPrice = items.reduce((total, item) => {
     return total + Number(item.price)
@@ -82,6 +72,8 @@ const Summary = () => {
         image: "https://static.vecteezy.com/system/resources/thumbnails/002/195/266/small/footwear-store-logo-set-shoe-style-premium-quality-free-vector.jpg",
         handler: async function (response:Response) {
           await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/checkout`,options.id)
+          removeAll()
+          toast.success('Order Placed Successfully')
         },
         prefill: {
           name: "",
@@ -117,9 +109,9 @@ const Summary = () => {
             <Currency value={totalPrice} />
           </div>
         </div>
-        <Button disabled={loading || items.length===0} className="w-full" variant="contained" onClick={onCheckout}>
+        <button disabled={loading || items.length===0} className={cn("cursor-pointer bg-black text-white mt-3 rounded-md py-3 w-full transition active:scale-95" ,loading || items.length===0 && 'bg-gray-400 active:scale-100 cursor-default')}  onClick={onCheckout}>
           Checkout
-        </Button>
+        </button>
       </div>
     </>
   );

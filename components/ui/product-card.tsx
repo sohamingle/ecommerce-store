@@ -38,10 +38,10 @@ const ProductCard:React.FC<Props> = ({data}) => {
                 <Image src={data?.images?.[0]?.url} alt="image" 
                 fill 
                 className="aspect-square object-cover rounded-md"/>
-                <div className="opacity-0 group-hover:opacity-100 absolute top-3 right-3">
+                <div className="lg:opacity-0 group-hover:opacity-100 absolute top-3 right-3">
                     <div className="flex flex-col space-y-2 justify-end">
-                        <PropButton onClick={onPreview} icon={<ZoomOutMap className="h-4 w-4"/>}/>
-                        <PropButton onClick={onAddToCart} icon={<AddShoppingCart className="h-4 w-4"/>}/>
+                        <PropButton onClick={onPreview} icon={<ZoomOutMap/>}/>
+                        <PropButton onClick={onAddToCart} icon={<AddShoppingCart/>}/>
                     </div>
                 </div>
             </div>
